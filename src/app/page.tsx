@@ -139,7 +139,7 @@ export default function Home() {
         <SolarSystem />
         <div className="text-center max-w-3xl relative z-10">
           <Reveal>
-            <p className="text-sm tracking-widest uppercase mb-4 text-purple-400">
+            <p className="text-sm tracking-widest uppercase mb-4 text-slate-400">
               <TypingEffect />
             </p>
           </Reveal>
@@ -158,11 +158,11 @@ export default function Home() {
               Full-stack developer building AI-powered platforms.
               <br />
               Founder of{" "}
-              <a href="https://8agents.xyz" target="_blank" className="text-purple-400 hover:text-purple-300 underline underline-offset-4">
+              <a href="https://8agents.xyz" target="_blank" className="text-orange-400 hover:text-orange-300 underline underline-offset-4">
                 8Agents
               </a>{" "}
               &{" "}
-              <a href="https://rakusaku.com" target="_blank" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4">
+              <a href="https://rakusaku.com" target="_blank" className="text-pink-400 hover:text-pink-300 underline underline-offset-4">
                 RakuSaku
               </a>
               .
@@ -218,7 +218,7 @@ export default function Home() {
                     I&apos;m a full-stack developer and entrepreneur based in Japan, passionate about building products that solve real problems. My focus is on AI-powered platforms and automation — turning complex workflows into simple, user-friendly experiences.
                   </p>
                   <p className="text-slate-300 leading-[1.8] mb-4">
-                    Currently running two SaaS platforms: <strong className="text-purple-400">8Agents</strong> (AI Agent marketplace) and <strong className="text-cyan-400">RakuSaku</strong> (digital services marketplace). Both built with Next.js, FastAPI, and Docker.
+                    Currently running two SaaS platforms: <strong className="text-orange-400">8Agents</strong> (AI Agent marketplace) and <strong className="text-pink-400">RakuSaku</strong> (digital services marketplace). Both built with Next.js, FastAPI, and Docker.
                   </p>
                   <p className="text-slate-400 text-sm">
                     Based in Japan 🇯🇵 · Open to collaboration
@@ -324,22 +324,22 @@ export default function Home() {
             <div className="glass-card rounded-2xl p-6 md:p-8">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center shrink-0">
-                    <ExternalLink className="w-5 h-5 text-purple-400" />
+                  <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center shrink-0">
+                    <ExternalLink className="w-5 h-5 text-orange-400" />
                   </div>
                   <div>
                     <h3 className="font-bold">Founder & Developer</h3>
-                    <p className="text-purple-400 text-sm">8Agents · 2026 - Present</p>
+                    <p className="text-orange-400 text-sm">8Agents · 2026 - Present</p>
                     <p className="text-slate-400 text-sm mt-1">AI Agent SaaS platform for real work via Telegram</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center shrink-0">
-                    <ExternalLink className="w-5 h-5 text-cyan-400" />
+                  <div className="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center shrink-0">
+                    <ExternalLink className="w-5 h-5 text-pink-400" />
                   </div>
                   <div>
                     <h3 className="font-bold">Founder & Developer</h3>
-                    <p className="text-cyan-400 text-sm">RakuSaku · 2026 - Present</p>
+                    <p className="text-pink-400 text-sm">RakuSaku · 2026 - Present</p>
                     <p className="text-slate-400 text-sm mt-1">Game top-up & digital services marketplace</p>
                   </div>
                 </div>
