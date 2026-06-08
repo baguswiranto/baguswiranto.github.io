@@ -242,7 +242,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-bold">Founder & Developer</h3>
-                    <p className="text-purple-400 text-sm">8Agents · 2024 - Present</p>
+                    <p className="text-purple-400 text-sm">8Agents · 2026 - Present</p>
                     <p className="text-slate-400 text-sm mt-1">AI Agent SaaS platform for real work via Telegram</p>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-bold">Founder & Developer</h3>
-                    <p className="text-cyan-400 text-sm">RakuSaku · 2023 - Present</p>
+                    <p className="text-cyan-400 text-sm">RakuSaku · 2026 - Present</p>
                     <p className="text-slate-400 text-sm mt-1">Game top-up & digital services marketplace</p>
                   </div>
                 </div>
