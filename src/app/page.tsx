@@ -144,7 +144,7 @@ export default function Home() {
           </Reveal>
           <Reveal>
             <h1
-              className="text-5xl md:text-7xl font-extrabold mb-6 gradient-text"
+              className="text-5xl md:text-7xl font-bold mb-6 gradient-text"
               style={{
                 textShadow: "0 0 40px rgba(34,211,238,0.3), 0 0 80px rgba(56,189,248,0.15)",
               }}
