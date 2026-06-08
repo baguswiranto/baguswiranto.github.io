@@ -14,9 +14,17 @@ interface Particle {
 
 export function FloatingParticles({ active }: { active: boolean }) {
   const [particles, setParticles] = useState<Particle[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (!active) {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  useEffect(() => {
+    if (!active || isMobile) {
       setParticles([]);
       return;
     }
@@ -32,15 +40,17 @@ export function FloatingParticles({ active }: { active: boolean }) {
         color: colors[Math.floor(Math.random() * colors.length)],
         duration: 1 + Math.random() * 1.5,
       };
-      setParticles((prev) => [...prev.slice(-8), p]);
+      setParticles((prev) => [...prev.slice(-6), p]);
       setTimeout(() => {
         setParticles((prev) => prev.filter((pp) => pp.id !== id));
       }, p.duration * 1000);
     };
 
-    const interval = setInterval(spawn, 150);
+    const interval = setInterval(spawn, 200);
     return () => clearInterval(interval);
-  }, [active]);
+  }, [active, isMobile]);
+
+  if (isMobile) return null;
 
   return (
     <AnimatePresence>
@@ -55,6 +65,7 @@ export function FloatingParticles({ active }: { active: boolean }) {
             height: p.size,
             backgroundColor: p.color,
             boxShadow: `0 0 ${p.size * 2}px ${p.color}80`,
+            willChange: "transform, opacity",
           }}
           initial={{ opacity: 0.8, y: 0 }}
           animate={{

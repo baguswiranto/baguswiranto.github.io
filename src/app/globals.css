@@ -151,3 +151,36 @@ section {
   background: rgba(168, 85, 247, 0.3);
   color: white;
 }
+
+/* Mobile scroll optimizations */
+@media (max-width: 768px) {
+  .star {
+    animation-duration: 8s !important;
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(8px);
+  }
+  
+  .glass-card:hover {
+    transform: none;
+  }
+  
+  section {
+    will-change: auto;
+  }
+}
+
+/* GPU acceleration for animated elements */
+.star,
+.glass-card,
+.btn-primary,
+.btn-outline {
+  will-change: opacity;
+  transform: translateZ(0);
+}
+
+/* Smooth scroll on all devices */
+html {
+  -webkit-overflow-scrolling: touch;
+}
