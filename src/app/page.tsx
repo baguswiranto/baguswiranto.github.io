@@ -73,7 +73,7 @@ export default function Home() {
           </Reveal>
           <Reveal>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
-              Bagus Wiranto
+              Bagus Wiranto Wicaksono
             </h1>
           </Reveal>
           <Reveal>
@@ -120,7 +120,7 @@ export default function Home() {
                 <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-purple-500/50 shrink-0">
                   <img
                     src="/profile.jpg"
-                    alt="Bagus Wiranto"
+                    alt="Bagus Wiranto Wicaksono"
                     className="w-full h-full object-cover"
                   />
                 </div>
