@@ -3,8 +3,9 @@
 import { useState } from "react";
 
 /**
- * Blindfold Reveal — Gojo's signature black blindfold (#1A1A1A).
- * On hover: blindfold slides away revealing Six Eyes (neon blue #1F5AFF).
+ * Blindfold reveal effect — when hovering over the profile photo,
+ * a blindfold overlay slides away to reveal Gojo's glowing six eyes.
+ * Pure CSS/React, no external images.
  */
 export function BlindfoldReveal() {
   const [isRevealed, setIsRevealed] = useState(false);
@@ -23,52 +24,50 @@ export function BlindfoldReveal() {
           alt="Bagus Wiranto Wicaksono"
           className="w-full h-full object-cover transition-all duration-500"
           style={{
-            filter: isRevealed ? "brightness(1.15) contrast(1.1)" : "brightness(0.85)",
+            filter: isRevealed ? "brightness(1.1) contrast(1.05)" : "brightness(0.9)",
           }}
         />
       </div>
 
-      {/* Black blindfold overlay — Gojo's signature */}
+      {/* Blindfold overlay */}
       <div
-        className="absolute overflow-hidden pointer-events-none"
+        className="absolute rounded-full overflow-hidden pointer-events-none"
         style={{
-          top: "38%",
-          left: "6%",
-          right: "6%",
-          height: "18%",
+          top: "40%",
+          left: "8%",
+          right: "8%",
+          height: "16%",
           background: isRevealed
-            ? "linear-gradient(90deg, #1F5AFF, #1F5AFF)"
-            : "linear-gradient(90deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%)",
+            ? "linear-gradient(90deg, rgba(0, 212, 255, 0.9) 0%, rgba(0, 212, 255, 0.7) 100%)"
+            : "linear-gradient(90deg, rgba(3, 0, 20, 0.95) 0%, rgba(3, 0, 20, 0.85) 100%)",
           borderRadius: "50%",
           transform: isRevealed ? "translateX(120%)" : "translateX(0)",
           transition: "transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55)",
           zIndex: 10,
-          border: isRevealed ? "none" : "1px solid #2a2a2a",
-          boxShadow: isRevealed
-            ? "none"
-            : "inset 0 1px 2px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.05)",
+          border: "1px solid rgba(0, 212, 255, 0.3)",
+          boxShadow: isRevealed ? "0 0 20px rgba(0, 212, 255, 0.6)" : "none",
         }}
       >
-        {/* Fabric texture */}
-        {!isRevealed && (
-          <div
-            className="w-full h-full"
-            style={{
-              background: "repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(40, 40, 40, 0.3) 3px, rgba(40, 40, 40, 0.3) 4px)",
-            }}
-          />
-        )}
+        {/* Blindfold texture */}
+        <div
+          className="w-full h-full"
+          style={{
+            background: isRevealed
+              ? "transparent"
+              : "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(123, 47, 190, 0.1) 2px, rgba(123, 47, 190, 0.1) 4px)",
+          }}
+        />
       </div>
 
-      {/* Six Eyes (Rikugan) — revealed on hover */}
+      {/* Glowing eyes (visible when blindfold is removed) */}
       <div
         className="absolute pointer-events-none"
         style={{
-          top: "42%",
+          top: "43%",
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",
-          gap: 24,
+          gap: 22,
           opacity: isRevealed ? 1 : 0,
           transition: "opacity 0.3s ease 0.2s",
           zIndex: 5,
@@ -78,10 +77,10 @@ export function BlindfoldReveal() {
         <div
           className="rounded-full"
           style={{
-            width: 12,
-            height: 12,
-            background: "radial-gradient(circle, #D1E6FF 0%, #1F5AFF 50%, rgba(31, 90, 255, 0.4) 80%, transparent 100%)",
-            boxShadow: "0 0 15px #1F5AFF, 0 0 30px rgba(31, 90, 255, 0.6), 0 0 45px rgba(31, 90, 255, 0.3)",
+            width: 10,
+            height: 10,
+            background: "radial-gradient(circle, #00D4FF 0%, rgba(0, 212, 255, 0.4) 60%, transparent 100%)",
+            boxShadow: "0 0 12px rgba(0, 212, 255, 0.8), 0 0 24px rgba(0, 212, 255, 0.4)",
             animation: "six-eyes-blink 3s ease-in-out infinite",
           }}
         />
@@ -89,22 +88,22 @@ export function BlindfoldReveal() {
         <div
           className="rounded-full"
           style={{
-            width: 12,
-            height: 12,
-            background: "radial-gradient(circle, #D1E6FF 0%, #1F5AFF 50%, rgba(31, 90, 255, 0.4) 80%, transparent 100%)",
-            boxShadow: "0 0 15px #1F5AFF, 0 0 30px rgba(31, 90, 255, 0.6), 0 0 45px rgba(31, 90, 255, 0.3)",
+            width: 10,
+            height: 10,
+            background: "radial-gradient(circle, #00D4FF 0%, rgba(0, 212, 255, 0.4) 60%, transparent 100%)",
+            boxShadow: "0 0 12px rgba(0, 212, 255, 0.8), 0 0 24px rgba(0, 212, 255, 0.4)",
             animation: "six-eyes-blink 3s ease-in-out 0.15s infinite",
           }}
         />
       </div>
 
-      {/* Energy ring pulse when revealed */}
+      {/* Pulsing energy ring when revealed */}
       {isRevealed && (
         <div
           className="absolute rounded-full pointer-events-none"
           style={{
             inset: -8,
-            border: "1px solid rgba(31, 90, 255, 0.5)",
+            border: "1px solid rgba(0, 212, 255, 0.4)",
             animation: "blindfold-pulse 1s ease-out forwards",
           }}
         />

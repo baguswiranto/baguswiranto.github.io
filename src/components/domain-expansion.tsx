@@ -65,7 +65,7 @@ export function DomainExpansion() {
               Unlimited Void
             </div>
             <div className="mt-4 text-sm tracking-[0.3em] text-purple-300/60 uppercase">
-              無量空処
+              閭墟空回り
             </div>
           </div>
         </div>
