@@ -163,29 +163,6 @@ export default function Home() {
         {/* Floating infinity symbols in background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 2 }}>
 
-          {/* Gojo portrait on right side */}
-          <div
-            className="absolute hidden md:block"
-            style={{
-              right: "-5%",
-              bottom: "-2%",
-              width: "min(40vw, 380px)",
-              height: "min(75vh, 550px)",
-              opacity: 0.85,
-              filter: "drop-shadow(0 0 30px rgba(31, 90, 255, 0.4)) drop-shadow(0 0 60px rgba(138, 43, 226, 0.25))",
-              animation: "gojo-hero-float 6s ease-in-out infinite",
-              maskImage: "linear-gradient(to top, transparent 0%, black 10%, black 90%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 10%, black 90%, transparent 100%)",
-            }}
-          >
-            <img
-              src="/gojo-domain.png"
-              alt=""
-              className="w-full h-full object-contain"
-              loading="lazy"
-            />
-          </div>
-
           <div className="absolute top-[15%] left-[10%] opacity-[0.07]">
             <InfinityDecor size="12rem" />
           </div>

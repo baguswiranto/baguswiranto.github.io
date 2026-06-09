@@ -3,8 +3,8 @@
 import { useState, useCallback } from "react";
 
 /**
- * "Domain Expansion" floating button that triggers a full-screen
- * purple void overlay with Gojo portrait and "Unlimited Void" text.
+ * "Domain Expansion" — Gojo portrait fills entire screen with transparent bg.
+ * Cosmic energy overlay, particles, and "Unlimited Void" text.
  */
 export function DomainExpansion() {
   const [isActive, setIsActive] = useState(false);
@@ -12,8 +12,7 @@ export function DomainExpansion() {
   const triggerDomain = useCallback(() => {
     if (isActive) return;
     setIsActive(true);
-    // Auto-dismiss after animation duration
-    setTimeout(() => setIsActive(false), 4000);
+    setTimeout(() => setIsActive(false), 4500);
   }, [isActive]);
 
   return (
@@ -30,14 +29,15 @@ export function DomainExpansion() {
 
       {/* Full-screen overlay */}
       {isActive && (
-        <div className="domain-expansion-overlay" key={Date.now()}>
-          {/* Infinity particles inside domain */}
+        <div className="domain-expansion-overlay" key={Date.now()} style={{ background: "rgba(3, 0, 20, 0.92)" }}>
+          
+          {/* Cosmic energy particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {Array.from({ length: 25 }).map((_, i) => {
+            {Array.from({ length: 30 }).map((_, i) => {
               const x = ((i * 47 + 13) % 100);
               const y = ((i * 73 + 31) % 100);
-              const size = 2 + (i % 4);
-              const delay = (i * 0.12);
+              const size = 2 + (i % 5);
+              const delay = (i * 0.1);
               return (
                 <div
                   key={i}
@@ -47,73 +47,78 @@ export function DomainExpansion() {
                     top: `${y}%`,
                     width: size,
                     height: size,
-                    background: i % 3 === 0 ? "#1F5AFF" : i % 3 === 1 ? "#7B2FBE" : "#D1E6FF",
-                    boxShadow: `0 0 ${size * 5}px ${i % 3 === 0 ? "rgba(31,90,255,0.7)" : i % 3 === 1 ? "rgba(123,47,190,0.7)" : "rgba(209,230,255,0.5)"}`,
+                    background: i % 4 === 0 ? "#1F5AFF" : i % 4 === 1 ? "#8A2BE2" : i % 4 === 2 ? "#D1E6FF" : "#FFFFFF",
+                    boxShadow: `0 0 ${size * 6}px ${i % 4 === 0 ? "rgba(31,90,255,0.8)" : i % 4 === 1 ? "rgba(138,43,226,0.8)" : "rgba(209,230,255,0.6)"}`,
                     animation: `cursed-float ${2 + (i % 3)}s ease-in-out ${delay}s infinite`,
-                    ["--drift" as string]: `${(i % 2 === 0 ? 1 : -1) * (20 + i * 3)}px`,
-                    ["--particle-opacity" as string]: "0.8",
+                    ["--drift" as string]: `${(i % 2 === 0 ? 1 : -1) * (25 + i * 3)}px`,
+                    ["--particle-opacity" as string]: "0.9",
                   }}
                 />
               );
             })}
           </div>
 
-          {/* Gojo portrait — slides in from right */}
+          {/* Gojo portrait — fills entire screen, transparent bg */}
           <div
-            className="absolute pointer-events-none"
+            className="absolute inset-0 pointer-events-none flex items-center justify-center"
             style={{
-              right: "5%",
-              bottom: "0",
-              width: "min(45vw, 400px)",
-              height: "min(80vh, 600px)",
               opacity: 0,
-              animation: "gojo-domain-enter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards",
-              filter: "drop-shadow(0 0 40px rgba(31, 90, 255, 0.6)) drop-shadow(0 0 80px rgba(138, 43, 226, 0.4)) drop-shadow(0 0 120px rgba(209, 230, 255, 0.2))",
+              animation: "gojo-fullscreen-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards",
             }}
           >
             <img
               src="/gojo-domain.png"
-              alt="Gojo Satoru"
+              alt="Gojo Satoru — Domain Expansion"
               className="w-full h-full object-contain"
               style={{
-                maskImage: "linear-gradient(to top, transparent 0%, black 15%, black 100%)",
-                WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 15%, black 100%)",
+                maxWidth: "100vw",
+                maxHeight: "100vh",
+                filter: "drop-shadow(0 0 40px rgba(31, 90, 255, 0.5)) drop-shadow(0 0 80px rgba(138, 43, 226, 0.4)) drop-shadow(0 0 120px rgba(209, 230, 255, 0.2))",
               }}
             />
           </div>
 
-          {/* Center text — left side */}
+          {/* Text overlay — bottom left */}
           <div
-            className="relative z-10 text-center"
+            className="absolute pointer-events-none"
             style={{
-              position: "absolute",
-              left: "8%",
-              top: "50%",
-              transform: "translateY(-50%)",
-              maxWidth: "50%",
+              left: "5%",
+              bottom: "8%",
+              zIndex: 20,
+              opacity: 0,
+              animation: "fadeIn 0.6s ease 0.6s forwards",
             }}
           >
             <div
-              className="text-center mb-4"
               style={{
-                fontSize: "clamp(2rem, 5vw, 4rem)",
-                background: "linear-gradient(135deg, #D1E6FF, #1F5AFF)",
+                fontSize: "clamp(3rem, 8vw, 6rem)",
+                background: "linear-gradient(135deg, #D1E6FF, #1F5AFF, #8A2BE2)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                animation: "domain-text-glow 1.5s ease-in-out infinite",
+                fontWeight: 900,
+                letterSpacing: "0.05em",
+                filter: "drop-shadow(0 0 20px rgba(31, 90, 255, 0.4))",
+                animation: "domain-text-glow 2s ease-in-out infinite",
               }}
             >
-              ∞
-            </div>
-            <div className="domain-expansion-text">
-              Unlimited Void
-            </div>
-            <div className="mt-4 text-sm tracking-[0.3em] text-blue-300/50 uppercase">
               無量空処
             </div>
             <div
-              className="mt-6 text-xs tracking-[0.15em] text-purple-300/30 uppercase"
-              style={{ animation: "fadeIn 1s ease 1s forwards", opacity: 0 }}
+              className="text-xl md:text-2xl font-bold tracking-[0.15em] uppercase mt-2"
+              style={{
+                color: "rgba(209, 230, 255, 0.7)",
+                textShadow: "0 0 15px rgba(31, 90, 255, 0.3)",
+              }}
+            >
+              Unlimited Void
+            </div>
+            <div
+              className="text-xs tracking-[0.2em] uppercase mt-4"
+              style={{
+                color: "rgba(138, 43, 226, 0.5)",
+                opacity: 0,
+                animation: "fadeIn 0.5s ease 1.2s forwards",
+              }}
             >
               Domain Expansion
             </div>
