@@ -3,7 +3,7 @@
 import { AnimatedBackground } from "@/components/animated-background";
 import { CosmicGlow } from "@/components/cosmic-glow";
 import { CustomCursor } from "@/components/custom-cursor";
-import { DomainExpansion } from "@/components/domain-expansion";
+
 import { TypingEffect } from "@/components/typing-effect";
 import { ProjectCard } from "@/components/project-card";
 import { CosmicEnergy } from "@/components/cosmic-energy";
@@ -158,7 +158,7 @@ export default function Home() {
       <ScrollProgress />
       <AnimatedBackground />
       <CustomCursor />
-      <DomainExpansion />
+
       <BackToTop />
 
       {/* Hero */}
