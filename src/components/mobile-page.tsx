@@ -69,7 +69,7 @@ export default function MobilePage() {
 
           {/* Description */}
           <p className="text-base text-foreground/70 mb-3 leading-relaxed max-w-md">
-            Building production-ready web apps and AI automations from idea to deploy.
+            Full-stack developer building AI-powered web apps and SaaS products. I ship from idea to production — frontend, backend, and everything in between.
           </p>
           <p className="text-sm text-muted mb-8">
             Founder of <span className="text-orange-500 font-medium">8Agents</span> & <span className="text-pink-500 font-medium">RakuSaku</span>. Based in Japan.
@@ -125,10 +125,10 @@ export default function MobilePage() {
           </div>
           <div className="rounded-2xl p-6 glass-card">
             <p className="text-foreground/80 leading-[1.8] mb-4 text-sm">
-              I&apos;m a self-taught full-stack developer based in Japan, focused on practical products that connect polished frontend UX with reliable backend systems and AI automation.
+              Full-stack developer based in Japan. I build products that combine polished UX with reliable backend systems and AI automation — from prototype to production.
             </p>
             <p className="text-foreground/80 leading-[1.8] mb-4 text-sm">
-              I shipped <strong className="text-orange-500">8Agents</strong>, an AI-agent SaaS platform, and <strong className="text-pink-500">RakuSaku</strong>, a digital services marketplace with payment and supplier integrations.
+              Founder of <strong className="text-orange-500">8Agents</strong> (AI-agent SaaS platform) and <strong className="text-pink-500">RakuSaku</strong> (digital marketplace with payments & supplier integrations).
             </p>
             <p className="text-muted text-xs">
               Based in Japan (JST) · Open to remote USD opportunities
@@ -172,8 +172,8 @@ export default function MobilePage() {
           </div>
           <div className="grid gap-4">
             {[
-              { title: "8Agents", desc: "Production AI-agent SaaS platform with 15+ autonomous agents, real-time task delegation, multi-provider AI integration, and Telegram-based monitoring.", url: "https://8agents.xyz", accent: "#f97316", status: "LIVE", logo: "/logos/8agents-64.webp", impact: ["15+ agents", "Multi-provider AI", "Telegram ops"] },
-              { title: "RakuSaku", desc: "Digital services marketplace with payment gateway integration, automated supplier fulfillment through Digiflazz, and admin workflows for managing orders.", url: "https://rakusaku.com", accent: "#ec4899", status: "LIVE", logo: "/logos/rakusaku-64.webp", impact: ["Payments", "Supplier API", "Admin dashboard"] },
+              { title: "8Agents", desc: "AI-agent SaaS platform for businesses. Custom autonomous agent workflows with multi-provider AI, real-time task delegation, and Telegram-based monitoring.", url: "https://8agents.xyz", accent: "#f97316", status: "LIVE", logo: "/logos/8agents-64.webp", impact: ["Autonomous agents", "Multi-provider AI", "Production SaaS"] },
+              { title: "RakuSaku", desc: "Digital marketplace with automated payments, supplier fulfillment, and admin workflows.", url: "https://rakusaku.com", accent: "#ec4899", status: "LIVE", logo: "/logos/rakusaku-64.webp", impact: ["Auto payments", "Supplier API", "Admin tools"] },
             ].map((project) => (
               <a key={project.title} href={project.url} target="_blank" rel="noopener noreferrer" className="project-card glass-card rounded-2xl p-5 block">
                 <div className="flex items-center gap-3 mb-3">
@@ -229,7 +229,7 @@ export default function MobilePage() {
                 <div>
                   <h3 className="font-bold text-sm text-foreground">Founder & Developer</h3>
                   <p className="text-pink-500 text-xs">RakuSaku · 2026 - Present</p>
-                  <p className="text-muted text-xs mt-1">Game top-up & digital services marketplace</p>
+                  <p className="text-muted text-xs mt-1">Digital marketplace with automated fulfillment</p>
                 </div>
               </div>
             </div>

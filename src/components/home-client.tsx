@@ -40,30 +40,30 @@ const SKILLS = [
 const PROJECTS = [
   {
     title: "8Agents",
-    desc: "Custom AI agent agency for mid-to-upper UMKM. Bespoke autonomous agent workflows — multi-provider AI integration, real-time task delegation, and Telegram-based monitoring.",
+    desc: "AI-agent SaaS platform for businesses. Custom autonomous agent workflows with multi-provider AI, real-time task delegation, and Telegram-based monitoring.",
     tech: ["Next.js", "FastAPI", "Docker", "PostgreSQL", "Redis", "Telegram Bot API"],
     url: "https://8agents.xyz",
     logo: "/logos/8agents-64.webp",
     accent: "#f97316",
     status: "LIVE",
-    impact: ["Custom agent workflows", "Multi-provider AI", "UMKM-focused"],
+    impact: ["Autonomous agents", "Multi-provider AI", "Production SaaS"],
   },
   {
     title: "RakuSaku",
-    desc: "Digital services marketplace with payment gateway integration, automated supplier fulfillment through Digiflazz, and admin workflows for managing orders.",
+    desc: "Digital marketplace with automated payments, supplier fulfillment, and admin workflows.",
     tech: ["Next.js", "FastAPI", "PostgreSQL", "Digiflazz API", "Duitku"],
     url: "https://rakusaku.com",
     logo: "/logos/rakusaku-64.webp",
     accent: "#ec4899",
     status: "LIVE",
-    impact: ["Payments", "Supplier API", "Admin dashboard"],
+    impact: ["Auto payments", "Supplier API", "Admin tools"],
   },
 ];
 
 const HIRE_SIGNALS = [
-  "Ships complete product flows from UI to backend APIs, database, Docker, and deploy.",
-  "Builds AI automation with multi-provider LLMs, Telegram workflows, and production monitoring.",
-  "Comfortable turning vague product ideas into working MVPs with practical, minimal code.",
+  "Full product ownership: UI → backend → database → deploy",
+  "AI automation with multi-provider LLMs, Telegram bots, production monitoring",
+  "Turn vague ideas into working MVPs — minimal code, maximum impact",
 ];
 
 /* ─── Hooks ─── */
@@ -267,7 +267,7 @@ export default function HomeClient() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl md:text-2xl text-foreground/80 leading-[1.6] mb-4 font-medium"
             >
-              I build production-ready web apps, AI automations, and SaaS workflows from idea to deploy.
+              Full-stack developer building AI-powered web apps and SaaS products. I ship from idea to production — frontend, backend, and everything in between.
             </motion.p>
             
             <motion.p
@@ -355,10 +355,10 @@ export default function HomeClient() {
               </div>
               <div>
                 <p className="text-foreground/80 leading-[1.8] mb-4">
-                  I&apos;m a self-taught full-stack developer based in Japan, focused on building practical products that connect polished frontend UX with reliable backend systems and AI automation.
+                  Full-stack developer based in Japan. I build products that combine polished UX with reliable backend systems and AI automation — from prototype to production.
                 </p>
                 <p className="text-foreground/80 leading-[1.8] mb-5">
-                  I shipped <strong className="text-orange-500">8Agents</strong>, an AI-agent SaaS platform, and <strong className="text-pink-500">RakuSaku</strong>, a digital services marketplace with payment and supplier integrations. I like small teams, clear outcomes, and production-minded engineering.
+                  Founder of <strong className="text-orange-500">8Agents</strong> (AI-agent SaaS platform) and <strong className="text-pink-500">RakuSaku</strong> (digital marketplace with payments & supplier integrations). I like small teams, clear outcomes, and production-minded engineering.
                 </p>
                 <div className="grid gap-3 mb-5">
                   {HIRE_SIGNALS.map((signal) => (
@@ -490,7 +490,7 @@ export default function HomeClient() {
                 <div>
                   <h3 className="font-bold text-white">Founder & Developer</h3>
                   <p className="text-pink-500 text-sm">RakuSaku · 2026 - Present</p>
-                  <p className="text-muted text-sm mt-1">Game top-up & digital services marketplace</p>
+                  <p className="text-muted text-sm mt-1">Digital marketplace with automated fulfillment</p>
                 </div>
               </div>
             </div>
